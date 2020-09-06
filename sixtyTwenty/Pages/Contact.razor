@@ -1,0 +1,20 @@
+﻿@page "/contact"
+
+<h1>Contact</h1>
+
+<p>Want to send Dan a note?</p>
+
+<a href="@hrefTag" class="btn btn-primary" role="button" target="_blank" @onmousemove="EmailMe">Email Dan!</a>
+
+@code {
+    private string subjectLine = "Message%20from%20reader";
+
+    private string email = "f@fjbh.dev";
+
+    string hrefTag;
+
+    private void EmailMe()
+    {
+        hrefTag = $"mailto:{email}?subject={subjectLine}";
+    }
+}
